@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin-left: 5%;
+}
+
+input, label {
+    display: block;
+}
+
+label {
+    margin-bottom: 1em;
+}
+
+input {
+    margin-bottom: .5em;
+}
+
+#state {
+    text-transform: lowercase;
+}
+
+#title {
+    font-size: 2em;
+}
+
+li {
+    margin-top: 1em;
+    list-style: none;
+}
+
+main {
+    margin-bottom: 5%;
+}

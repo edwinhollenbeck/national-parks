@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>List National Parks</title>
+        <meta description="An app to list the national parks in a state.">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <h1>List State National Parks</h1>
+        </header>
+        <main>
+            <form>
+                <input type="text" maxlength="2" id="state" required>
+                <label for="state">Enter 2 letter state code</label>
+                <input type="number" min="1" max="10" id="number">
+                <label for="number">Enter Number of Results to be Returned</label>
+                <button>Submit</button>
+            </form>
+            <section id="results"></section>
+        </main>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
