@@ -1,3 +1,17 @@
+function addRemoveStates() {
+    $('.add-state').click(function(event) {
+        $('#state-label').before(`
+        <div>
+            <input type="text" maxlength="2" class="another-state" required>
+            <button type="button" class="remove-state">-</button>
+        <div>
+        `)
+    })
+    $('form').on('click', '.remove-state', (function(event) {
+        $(this).parent().remove();
+    }))
+};
+
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -38,10 +52,11 @@ function displayParkInfo(responseJson) {
  function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      const stateCode = $('#state').val();
+      let stateCodes = $('#state').val()+','+$('.another-state').val();
       const maxResults = $('#number').val();
-      searchParks(stateCode, maxResults);
+      searchParks(stateCodes, maxResults);
     });
 };
 
 $(watchForm());
+$(addRemoveStates());

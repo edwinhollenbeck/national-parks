@@ -16,6 +16,8 @@ label {
 
 input {
     margin-bottom: .5em;
+    margin-right: 0;
+    display: inline-block;
 }
 
 #state {
@@ -33,4 +35,8 @@ li {
 
 main {
     margin-bottom: 5%;
+}
+
+div {
+    display: block;
 }
