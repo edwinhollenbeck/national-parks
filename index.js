@@ -2,9 +2,9 @@ function addRemoveStates() {
     $('.add-state').click(function(event) {
         $('#state-label').before(`
         <div>
-            <input type="text" maxlength="2" class="another-state" required>
+            <input type="text" maxlength="2" class="state" required>
             <button type="button" class="remove-state">-</button>
-        <div>
+        </div>
         `)
     })
     $('form').on('click', '.remove-state', (function(event) {
@@ -52,8 +52,11 @@ function displayParkInfo(responseJson) {
  function watchForm() {
     $('form').submit(event => {
       event.preventDefault();
-      let stateCodes = $('#state').val()+','+$('.another-state').val();
-      const maxResults = $('#number').val();
+      let stateCodes = "";
+      let maxResults = $('#number').val();
+      $('.state').each(function() {
+        stateCodes = stateCodes.concat(this.value+',');
+    })
       searchParks(stateCodes, maxResults);
     });
 };
